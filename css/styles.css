@@ -12,7 +12,7 @@
  */
 :root {
   --blue: #007bff;
-  --indigo: #6610f2;
+  --indigo: #be03af;
   --purple: #8b0480;
   --pink: #e83e8c;
   --red: #dc3545;
@@ -32,6 +32,10 @@
   --danger: #dc3545;
   --light: #f8f9fa;
   --dark: #343a40;
+  --disc-green: #43b581;
+  --disc-red: #f04747;
+  --disc-orange: #faa61a;
+  --disc-grey: #747f8d;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -3913,7 +3917,7 @@ input[type=button].btn-block {
   text-decoration: none;
 }
 .nav-link.disabled {
-  color: #6c757d;
+  color: var(--gray);
   pointer-events: none;
   cursor: default;
 }
@@ -3955,7 +3959,7 @@ input[type=button].btn-block {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #1abc9c;
+  background-color: var(--primary);
 }
 
 .nav-fill .nav-item {
@@ -10088,13 +10092,13 @@ h3 {
   color: #fff;
 }
 #mainNav .navbar-nav li.nav-item a.nav-link:hover {
-  color: #1abc9c;
+  color: var(--indigo);
 }
 #mainNav .navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus {
   color: #fff;
 }
 #mainNav .navbar-nav li.nav-item a.nav-link.active {
-  color: #1abc9c;
+  color: var(--primary);
 }
 #mainNav .navbar-toggler {
   font-size: 80%;
@@ -10116,11 +10120,11 @@ h3 {
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link.active {
     color: #fff;
-    background: #1abc9c;
+    background: var(--primary);
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link.active:active, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
     color: #fff;
-    background: #1abc9c;
+    background: var(--primary);
   }
 
   #mainNav.navbar-shrink {
@@ -10166,6 +10170,7 @@ h3 {
   max-width: 25rem;
   border-radius: 0.5rem;
   overflow: hidden;
+  height: 100%;
 }
 .portfolio .portfolio-item .portfolio-item-caption {
   position: absolute;
@@ -10258,4 +10263,61 @@ form .row:first-child .floating-label-form-group {
 
 .copyright {
   background-color: var(--secondary);
+}
+
+.portfolio .portfolio-item .circle-wrapper {
+  border-radius: 15px;
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  overflow-x: hidden;
+  transition: width 0.2s ease-in-out;
+  display: inline-block;
+  position: relative;
+  top: 72%;
+  left: 64%;
+}
+
+.portfolio .portfolio-item .circle-wrapper::after {
+  font-variant: small-caps;
+  color: white;
+  padding-left: 31px;
+  transition: padding-left 0.2s ease-in-out;
+}
+
+.portfolio .portfolio-item .circle-wrapper.online {
+  background-color: var(--disc-green);
+}
+
+.portfolio .portfolio-item .circle-wrapper.online::after {
+  content: "online";
+}
+
+.portfolio .portfolio-item .circle-wrapper.offline {
+  background-color: var(--disc-grey);
+}
+
+.portfolio .portfolio-item .circle-wrapper.offline::after {
+  content: "offline";
+}
+
+.portfolio .portfolio-item .circle-wrapper.unsupported {
+  background-color: var(--disc-orange);
+}
+
+.portfolio .portfolio-item .circle-wrapper.unsupported::after {
+  content: "unsupported";
+  color: black;
+}
+
+.portfolio .portfolio-item .circle-wrapper:hover {
+  width: 97px;
+}
+
+.portfolio .portfolio-item .circle-wrapper:hover::after {
+  padding-left: 7px;
+}
+
+.portfolio .portfolio-item .img-fluid {
+  margin-top: -36px;
 }
