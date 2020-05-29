@@ -9809,7 +9809,7 @@ a.text-primary:hover, a.text-primary:focus {
 }
 
 .text-secondary {
-  color: var(--purple) !important;
+  color: var(--indigo) !important;
 }
 
 a.text-secondary:hover, a.text-secondary:focus {
@@ -10027,9 +10027,9 @@ h3 {
   width: 100%;
   max-width: 7rem;
   height: 0.25rem;
-  background-color: var(--purple);
+  background-color: var(--indigo);
   border-radius: 1rem;
-  border-color: var(--purple) !important;
+  border-color: var(--indigo) !important;
 }
 .divider-custom .divider-custom-line:first-child {
   margin-right: 1rem;
@@ -10038,7 +10038,7 @@ h3 {
   margin-left: 1rem;
 }
 .divider-custom .divider-custom-icon {
-  color: var(--purple) !important;
+  color: var(--indigo) !important;
   font-size: 2rem;
 }
 .divider-custom.divider-light .divider-custom-line {
