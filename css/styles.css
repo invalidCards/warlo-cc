@@ -379,6 +379,7 @@ h2, .h2 {
 
 h3, .h3 {
   font-size: 1.75rem;
+  padding-bottom: 0.25em;
 }
 
 h4, .h4 {
@@ -5477,7 +5478,7 @@ a.close.disabled {
   flex-direction: column;
   width: 100%;
   pointer-events: auto;
-  background-color: #fff;
+  background-color: var(--secondary);
   background-clip: padding-box;
   border: 0 solid rgba(0, 0, 0, 0.2);
   border-radius: 0.75rem;
@@ -10170,7 +10171,7 @@ h3 {
   max-width: 25rem;
   border-radius: 0.5rem;
   overflow: hidden;
-  height: 100%;
+  height: 245.5px;
 }
 .portfolio .portfolio-item .portfolio-item-caption {
   position: absolute;
@@ -10178,7 +10179,7 @@ h3 {
   left: 0;
   transition: all 0.2s ease-in-out;
   opacity: 0;
-  background-color: rgba(26, 188, 156, 0.9);
+  background-color: rgba(110, 4, 102, 0.9);
 }
 .portfolio .portfolio-item .portfolio-item-caption:hover {
   opacity: 1;
@@ -10269,7 +10270,6 @@ form .row:first-child .floating-label-form-group {
   border-radius: 15px;
   width: 30px;
   height: 30px;
-  font-size: 16px;
   overflow-x: hidden;
   transition: width 0.2s ease-in-out;
   display: inline-block;
@@ -10283,6 +10283,7 @@ form .row:first-child .floating-label-form-group {
   color: white;
   padding-left: 31px;
   transition: padding-left 0.2s ease-in-out;
+  font-size: 15px;
 }
 
 .portfolio .portfolio-item .circle-wrapper.online {
@@ -10311,13 +10312,9 @@ form .row:first-child .floating-label-form-group {
 }
 
 .portfolio .portfolio-item .circle-wrapper:hover {
-  width: 97px;
+  width: 103px;
 }
 
 .portfolio .portfolio-item .circle-wrapper:hover::after {
   padding-left: 7px;
-}
-
-.portfolio .portfolio-item .img-fluid {
-  margin-top: -36px;
 }
