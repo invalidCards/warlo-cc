@@ -1,72 +1,73 @@
-.portfolio .portfolio-item .portfolio-icon {
+.portfolio-icon {
     margin: auto;
     width: 180px;
     height: 180px;
+    border: 3px white solid;
     border-radius: 50%;
     background-repeat: no-repeat;
     background-size: contain;
 }
 
-.portfolio .portfolio-item .portfolio-icon.icon-tba {
+.portfolio-icon.icon-tba {
     background-image: url(../assets/img/portfolio/tba.png);
 }
 
-.portfolio .portfolio-item .portfolio-icon.icon-gloopybot {
+.portfolio-icon.icon-gloopybot {
     background-image: url(../assets/img/portfolio/gloopybot.png);
 }
 
-.portfolio .portfolio-item .portfolio-icon.icon-wikialinker {
+.portfolio-icon.icon-wikialinker {
     background-image: url(../assets/img/portfolio/wikialinker.png);
 }
 
-.portfolio .portfolio-item .portfolio-icon.icon-googlr {
+.portfolio-icon.icon-googlr {
     background-image: url(../assets/img/portfolio/googlr.png);
 }
 
-.portfolio .portfolio-item .portfolio-icon.icon-birbbot {
+.portfolio-icon.icon-birbbot {
     background-image: url(../assets/img/portfolio/birbbot.png);
 }
 
-.portfolio .portfolio-item .portfolio-icon.icon-bugebot {
+.portfolio-icon.icon-bugebot {
     background-image: url(../assets/img/portfolio/bugebot.png);
 }
 
-.portfolio .portfolio-item .portfolio-icon.icon-charbotte {
+.portfolio-icon.icon-charbotte {
     background-image: url(../assets/img/portfolio/charbotte.png);
 }
 
-.portfolio .portfolio-item .portfolio-icon.icon-chungocraft {
+.portfolio-icon.icon-chungocraft {
     background-image: url(../assets/img/portfolio/chungocraft.png);
 }
 
-.portfolio .portfolio-item .portfolio-icon.icon-frob {
+.portfolio-icon.icon-frob {
     background-image: url(../assets/img/portfolio/frob.png);
 }
 
-.portfolio .portfolio-item .portfolio-icon.icon-froggobot {
+.portfolio-icon.icon-froggobot {
     background-image: url(../assets/img/portfolio/froggobot.png);
 }
 
-.portfolio .portfolio-item .portfolio-icon.icon-homewardbot {
+.portfolio-icon.icon-homewardbot {
     background-image: url(../assets/img/portfolio/homewardbot.png);
 }
 
-.portfolio .portfolio-item .portfolio-icon.icon-rosebot {
+.portfolio-icon.icon-rosebot {
     background-image: url(../assets/img/portfolio/rosebot.png);
 }
 
-.portfolio .portfolio-item .portfolio-icon.icon-shitpeoplebot {
+.portfolio-icon.icon-shitpeoplebot {
     background-image: url(../assets/img/portfolio/shitpeoplebot.png);
 }
 
-.portfolio .portfolio-item .portfolio-icon.icon-terribot {
+.portfolio-icon.icon-terribot {
     background-image: url(../assets/img/portfolio/terribot.png);
 }
 
-.portfolio .portfolio-item .portfolio-icon.icon-frogleap {
+.portfolio-icon.icon-frogleap {
     background-image: url(../assets/img/portfolio/frogleap.png);
 }
 
-.portfolio .portfolio-item .portfolio-icon.icon-newxkit {
+.portfolio-icon.icon-newxkit {
     background-image: url(../assets/img/portfolio/newxkit.png);
 }
