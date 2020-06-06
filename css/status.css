@@ -1,0 +1,72 @@
+:root {
+    --disc-green: #43b581;
+    --disc-red: #f04747;
+    --disc-orange: #faa61a;
+    --disc-grey: #747f8d;
+}
+
+.circle-wrapper {
+    border-radius: 15px;
+    width: 30px;
+    height: 30px;
+    overflow-x: hidden;
+    transition: width 0.2s ease-in-out;
+    display: inline-block;
+    position: relative;
+    text-align: left !important;
+    margin-right: auto;
+    top: 78%;
+    left: 78%;
+}
+
+.portfolio-modal .circle-wrapper {
+    left: 58%;
+    width: 103px;
+}
+
+.portfolio-modal .circle-wrapper::after {
+    left: 58%;
+    width: 103px;
+    padding-left: 7px;
+}
+
+.circle-wrapper::after {
+    font-variant: small-caps;
+    color: white;
+    padding-left: 31px;
+    transition: padding-left 0.2s ease-in-out;
+    font-size: 15px;
+}
+
+.circle-wrapper.online {
+    background-color: var(--disc-green);
+}
+
+.circle-wrapper.online::after {
+    content: "online";
+}
+
+.circle-wrapper.offline {
+    background-color: var(--disc-grey);
+}
+
+.circle-wrapper.offline::after {
+    content: "offline";
+}
+
+.circle-wrapper.unsupported {
+    background-color: var(--disc-orange);
+}
+
+.circle-wrapper.unsupported::after {
+    content: "unsupported";
+    color: black;
+}
+
+.circle-wrapper:hover {
+    width: 103px;
+}
+
+.circle-wrapper:hover::after {
+    padding-left: 7px;
+}
