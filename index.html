@@ -9,7 +9,7 @@
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <link href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" rel="stylesheet" type="text/css" />
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Bitter:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Raleway:500,700,500italic,700italic" rel="stylesheet" type="text/css" />
@@ -70,7 +70,7 @@
                     </div>
                     <!-- break -->
                     <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#pfTBA1">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#pfTBA">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><p>TBA</p><i class="fas fa-external-link-alt fa-3x"></i></div>
                             </div>
@@ -100,7 +100,7 @@
                 <h3 class="text-center text-uppercase text-secondary mb-0">Discord bots - Private</h3>
                 <div class="row justify-content-center">
                     <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#pfTBA2">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#pfTBA">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><p>TBA</p><i class="fas fa-external-link-alt fa-3x"></i></div>
                             </div>
@@ -223,7 +223,7 @@
                     </div>
                     <!-- break -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#pfTBA3">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#pfTBA">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><p>TBA</p><i class="fas fa-external-link-alt fa-3x"></i></div>
                             </div>
@@ -287,6 +287,38 @@
             <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a>
         </div>
         <!-- Portfolio Modals-->
+        <div class="portfolio-modal modal fade" id="pfTBA" tabindex="-1" role="dialog" aria-labelledby="pfTBALbl" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="pfTBALbl">To be announced</h2>
+                                    <div class="portfolio-icon icon-tba"></div>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <div class="portfolio-links">
+                                        <a class="btn disabled btn-outline-light btn-social mx-1" href=""><i class="fas fa-fw fa-code"></i></a>
+                                        <a class="btn disabled btn-outline-light btn-social mx-1" href=""><i class="fab fa-fw fa-discord"></i></a>
+                                    </div>
+                                    <p class="mb-5">This project is currently in the works, and details of it have not yet been released. Watch this space!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- break -->
         <div class="portfolio-modal modal fade" id="pfGloopyBot" tabindex="-1" role="dialog" aria-labelledby="pfGloopyBotLbl" aria-hidden="true">
             <div class="modal-dialog modal-xl" role="document">
                 <div class="modal-content">
@@ -306,8 +338,11 @@
                                         <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
                                         <div class="divider-custom-line"></div>
                                     </div>
-                                    <div class="portfolio-links"><a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fas fa-fw fa-code"></i></a><a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-discord"></i></a></div>
-                                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <div class="portfolio-links">
+                                        <a class="btn btn-outline-light btn-social mx-1" href="https://gitlab.com/weirdgloop/gloopybot"><i class="fas fa-fw fa-code"></i></a>
+                                        <a class="btn btn-outline-light btn-social mx-1" href="https://discordapp.com/oauth2/authorize?client_id=393024915755761674&scope=bot&permissions=330752"><i class="fab fa-fw fa-discord"></i></a>
+                                    </div>
+                                    <p class="mb-5">GloopyBot is a bot for linking to the <a href="https://weirdgloop.org">Weird Gloop</a> family of wikis, such as the <a href="https://runescape.wiki">RuneScape</a> and <a href="https://oldschool.runescape.wiki">OldSchool RuneScape</a> wikis, as well as to the <a href="https://en.wikipedia.org">English version of Wikipedia</a>.</p>
                                 </div>
                             </div>
                         </div>
@@ -316,6 +351,455 @@
             </div>
         </div>
         <!-- break -->
+        <div class="portfolio-modal modal fade" id="pfWikiaLinker" tabindex="-1" role="dialog" aria-labelledby="pfWikiaLinkerLbl" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="pfWikiaLinkerLbl">WikiaLinker</h2>
+                                    <div class="portfolio-icon icon-wikialinker"><div class="circle-wrapper unsupported"></div></div>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <div class="portfolio-links">
+                                        <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/invalidCards/WikiaLinker"><i class="fas fa-fw fa-code"></i></a>
+                                        <a class="btn btn-outline-light btn-social mx-1" href="https://discordapp.com/oauth2/authorize?client_id=182146444357140480&scope=bot&permissions=3072"><i class="fab fa-fw fa-discord"></i></a>
+                                    </div>
+                                    <p class="mb-5"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- break -->
+        <div class="portfolio-modal modal fade" id="pfGooGlr" tabindex="-1" role="dialog" aria-labelledby="pfGooGlrLbl" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="pfGooGlrLbl">GooGlr</h2>
+                                    <div class="portfolio-icon icon-googlr"><div class="circle-wrapper offline"></div></div>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <div class="portfolio-links">
+                                        <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/invalidCards/GooGlr"><i class="fas fa-fw fa-code"></i></a>
+                                        <a class="btn disabled btn-outline-light btn-social mx-1" href=""><i class="fab fa-fw fa-discord"></i></a>
+                                    </div>
+                                    <p class="mb-5">GooGlr was a somewhat simple bot that could quickly create goo.gl shortlinks to links supplied to it. This bot was shut down when <a href="https://developers.googleblog.com/2018/03/transitioning-google-url-shortener.html">the service did</a> in March of 2019.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- break -->
+        <div class="portfolio-modal modal fade" id="pfBirbbot" tabindex="-1" role="dialog" aria-labelledby="pfBirbbotLbl" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="pfBirbbotLbl">Birbbot</h2>
+                                    <div class="portfolio-icon icon-birbbot"><div class="circle-wrapper online"></div></div>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <div class="portfolio-links">
+                                        <a class="btn disabled btn-outline-light btn-social mx-1" href=""><i class="fas fa-fw fa-code"></i></a>
+                                        <a class="btn disabled btn-outline-light btn-social mx-1" href=""><i class="fab fa-fw fa-discord"></i></a>
+                                    </div>
+                                    <p class="mb-5">Birbbot is a bot commissioned by Aorpheat on Discord for the welcoming of new members, assigning them a role, and giving that role a random colour every time a new person joins their server.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- break -->
+        <div class="portfolio-modal modal fade" id="pfBugebot" tabindex="-1" role="dialog" aria-labelledby="pfBugebotLbl" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="pfBugebotLbl">Bugebot</h2>
+                                    <div class="portfolio-icon icon-bugebot"><div class="circle-wrapper online"></div></div>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <div class="portfolio-links">
+                                        <a class="btn disabled btn-outline-light btn-social mx-1" href=""><i class="fas fa-fw fa-code"></i></a>
+                                        <a class="btn disabled btn-outline-light btn-social mx-1" href=""><i class="fab fa-fw fa-discord"></i></a>
+                                    </div>
+                                    <p class="mb-5">Bugebot is a bot made for Kris on Discord. It assigns people a new name when prompted, chosen randomly from an extensive list of words from the English language.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- break -->
+        <div class="portfolio-modal modal fade" id="pfCharbotte" tabindex="-1" role="dialog" aria-labelledby="pfCharbotteLbl" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="pfCharbotteLbl">Charbotte</h2>
+                                    <div class="portfolio-icon icon-charbotte"><div class="circle-wrapper online"></div></div>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <div class="portfolio-links">
+                                        <a class="btn disabled btn-outline-light btn-social mx-1" href=""><i class="fas fa-fw fa-code"></i></a>
+                                        <a class="btn disabled btn-outline-light btn-social mx-1" href=""><i class="fab fa-fw fa-discord"></i></a>
+                                    </div>
+                                    <p class="mb-5">Charbotte is a bot created for Charlotte on Discord. It reacts to messages with certain words in them, as well as randomly calling people non-sensical swears. (Note that this bot is entirely for comedic effect; it is not meant to insult or harass one single person in particular.)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- break -->
+        <div class="portfolio-modal modal fade" id="pfChungocraft" tabindex="-1" role="dialog" aria-labelledby="pfChungocraftLbl" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="pfChungocraftLbl">Chungocraft</h2>
+                                    <div class="portfolio-icon icon-chungocraft"><div class="circle-wrapper online"></div></div>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <div class="portfolio-links">
+                                        <a class="btn disabled btn-outline-light btn-social mx-1" href=""><i class="fas fa-fw fa-code"></i></a>
+                                        <a class="btn disabled btn-outline-light btn-social mx-1" href=""><i class="fab fa-fw fa-discord"></i></a>
+                                    </div>
+                                    <p class="mb-5">Chungocraft is a bot created for the Minecraft server of the same name. It tracks the amount of people online on the server and shows it as a custom status. Additionally, it also has a command for looking up the MOTD, player count and player list for any other Minecraft server.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- break -->
+        <div class="portfolio-modal modal fade" id="pfFrob" tabindex="-1" role="dialog" aria-labelledby="pfFrobLbl" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="pfFrobLbl">Frob</h2>
+                                    <div class="portfolio-icon icon-frob"><div class="circle-wrapper online"></div></div>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <div class="portfolio-links">
+                                        <a class="btn disabled btn-outline-light btn-social mx-1" href=""><i class="fas fa-fw fa-code"></i></a>
+                                        <a class="btn disabled btn-outline-light btn-social mx-1" href=""><i class="fab fa-fw fa-discord"></i></a>
+                                    </div>
+                                    <p class="mb-5">Frob is a bot created for the Patreon Discord server of <a href="https://patreon.com/filibusterfrog">Filibusterfrog</a>, allowing users in the server to change their name colour as well as certain notification roles at will, without requiring administrator intervention.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- break -->
+        <div class="portfolio-modal modal fade" id="pfFroggoBot" tabindex="-1" role="dialog" aria-labelledby="pfFroggoBotLbl" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="pfFroggoBotLbl">FroggoBot</h2>
+                                    <div class="portfolio-icon icon-froggobot"><div class="circle-wrapper unsupported"></div></div>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <div class="portfolio-links">
+                                        <a class="btn disabled btn-outline-light btn-social mx-1" href=""><i class="fas fa-fw fa-code"></i></a>
+                                        <a class="btn disabled btn-outline-light btn-social mx-1" href=""><i class="fab fa-fw fa-discord"></i></a>
+                                    </div>
+                                    <p class="mb-5">FroggoBot is a bot created for <a href="https://patreon.com/filibusterfrog">Filibusterfrog's</a> first Discord server, that included a few fun commands such as dice rolling and coin flipping. The bot is still online, but since the Discord server has seen very little activity in the past year, it is not expected that this bot will ever be worked on again.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- break -->
+        <div class="portfolio-modal modal fade" id="pfHomewardBot" tabindex="-1" role="dialog" aria-labelledby="pfHomewardBotLbl" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="pfHomewardBotLbl">Homeward Bot</h2>
+                                    <div class="portfolio-icon icon-homewardbot"><div class="circle-wrapper online"></div></div>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <div class="portfolio-links">
+                                        <a class="btn disabled btn-outline-light btn-social mx-1" href=""><i class="fas fa-fw fa-code"></i></a>
+                                        <a class="btn disabled btn-outline-light btn-social mx-1" href=""><i class="fab fa-fw fa-discord"></i></a>
+                                    </div>
+                                    <p class="mb-5">HomewardBot is a clone of the Chungocraft bot created for the HomewardBound Minecraft server community. It shows the current playercount on the server in its custom status, and includes a command to look up the MOTD, playercount and player list for any Minecraft server.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- break -->
+        <div class="portfolio-modal modal fade" id="pfRosebot" tabindex="-1" role="dialog" aria-labelledby="pfRosebotLbl" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="pfRosebotLbl">Rosebot</h2>
+                                    <div class="portfolio-icon icon-rosebot"><div class="circle-wrapper online"></div></div>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <div class="portfolio-links">
+                                        <a class="btn disabled btn-outline-light btn-social mx-1" href=""><i class="fas fa-fw fa-code"></i></a>
+                                        <a class="btn disabled btn-outline-light btn-social mx-1" href=""><i class="fab fa-fw fa-discord"></i></a>
+                                    </div>
+                                    <p class="mb-5">Rosebot is a bot that I created for my own private Discord server. It adds some functionality that we were missing when we moved out of a DM group, such as notifications every time someone starts a voice call, and it also keeps a log of all deleted messages (in order to regulate the server's policy to allow anyone to manage any message) and automatically gives people their roles back after they've been kicked and have rejoined.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- break -->
+        <div class="portfolio-modal modal fade" id="pfShitPeopleBot" tabindex="-1" role="dialog" aria-labelledby="pfShitPeopleBotLbl" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="pfShitPeopleBotLbl">ShitPeopleBot</h2>
+                                    <div class="portfolio-icon icon-shitpeoplebot"><div class="circle-wrapper online"></div></div>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <div class="portfolio-links">
+                                        <a class="btn disabled btn-outline-light btn-social mx-1" href=""><i class="fas fa-fw fa-code"></i></a>
+                                        <a class="btn disabled btn-outline-light btn-social mx-1" href=""><i class="fab fa-fw fa-discord"></i></a>
+                                    </div>
+                                    <p class="mb-5">ShitPeopleBot is a bot created for the community of the <a href="https://shitpeoplesayintf2.tumblr.com">Shit People Say in TF2 Tumblr blog</a>. It allows people to set roles out of a list configurable by admins, as well as being able to scrape <a href="https://backpack.tf">backpack.tf</a> for in-game trading prices for Team Fortress 2 items.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- break -->
+        <div class="portfolio-modal modal fade" id="pfTerribot" tabindex="-1" role="dialog" aria-labelledby="pfTerribotLbl" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="pfTerribotLbl">Terribot</h2>
+                                    <div class="portfolio-icon icon-terribot"><div class="circle-wrapper unsupported"></div></div>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <div class="portfolio-links">
+                                        <a class="btn disabled btn-outline-light btn-social mx-1" href=""><i class="fas fa-fw fa-code"></i></a>
+                                        <a class="btn disabled btn-outline-light btn-social mx-1" href=""><i class="fab fa-fw fa-discord"></i></a>
+                                    </div>
+                                    <p class="mb-5">Terribot was an experimental bot created for the <a href="https://runescape.wiki">RuneScape Wiki</a> Discord server. It allowed anyone with a terrible idea (hence the name, Terrible Bot or Terribot for short) to suggest it using the bot, which would then make a GitHub issue out of it to save it, as well as allowing reactions to those ideas in the form of a GitHub reply. The bot is still online, but the channel created for this purpose has been deleted, and Terribot does not see a lot of use anymore; regardless, it was a good way for me to experiment with the limitations and capabilities of the GitHub API.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- break -->
+        <div class="portfolio-modal modal fade" id="pfFrogLeap" tabindex="-1" role="dialog" aria-labelledby="pfFrogLeapLbl" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="pfFrogLeapLbl">FrogLeap</h2>
+                                    <div class="portfolio-icon icon-frogleap"></div>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <div class="portfolio-links">
+                                        <a class="btn disabled btn-outline-light btn-social mx-1" href=""><i class="fas fa-fw fa-code"></i></a>
+                                        <a class="btn btn-outline-light btn-social mx-1" href="https://invalidcards.itch.io/frogleap"><i class="fab fa-fw fa-itch-io"></i></a>
+                                    </div>
+                                    <p class="mb-5">FrogLeap is a game prototype that I created during the <a href="https://itch.io/jam/my-first-game-jam-summer-2018">My First Game Jam Summer 2018 edition</a>. It is a platformer with procedurally generated levels. There was a plan to expand the game way further than it came in the end, with random effects applied to each level as well usable items, but this turned out to be too time-consuming for the time available during the game jam. In its current state it has a very basic game loop and is very unpolished and unfinished, but it is a concept that I would like to expand on in the future.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- break -->
+        <div class="portfolio-modal modal fade" id="pfNewXKit" tabindex="-1" role="dialog" aria-labelledby="pfNewXKitLbl" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="pfNewXKitLbl">New XKit</h2>
+                                    <div class="portfolio-icon icon-newxkit"></div></div>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <div class="portfolio-links">
+                                        <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/new-xkit/XKit"><i class="fas fa-fw fa-code"></i></a>
+                                        <a class="btn btn-outline-light btn-social mx-1" href="https://new-xkit-extension.tumblr.com"><i class="fab fa-fw fa-tumblr"></i></a>
+                                        <a class="btn btn-outline-light btn-social mx-1" href="https://chrome.google.com/webstore/detail/new-xkit/inobiceghmpkaklcknpniboilbjmlald"><i class="fab fa-fw fa-chrome"></i></a>
+                                        <a class="btn btn-outline-light btn-social mx-1" href="https://new-xkit-extension.tumblr.com/firefox"><i class="fab fa-fw fa-firefox-browser"></i></a>
+                                    </div>
+                                    <p class="mb-5">New XKit is a Chrome and Firefox extension that functions as a toolkit for <a href="https://tumblr.com">Tumblr</a>, expanding on the default features of the site and introducing new ways to make the site more useable. The project has had over 70 contributors since its creatioin by a developer named Atesh, which the New XKit team in August of 2015 after he disappeared from the internet. At the time of writing, the project has approximately five active contributors, but anyone is welcome to add code to the project.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>

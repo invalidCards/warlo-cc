@@ -17,6 +17,7 @@
     margin-right: auto;
     top: 78%;
     left: 78%;
+    padding-top: 1.5px;
 }
 
 .portfolio-modal .circle-wrapper {
@@ -25,8 +26,6 @@
 }
 
 .portfolio-modal .circle-wrapper::after {
-    left: 58%;
-    width: 103px;
     padding-left: 7px;
 }
 
