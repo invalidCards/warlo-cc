@@ -12,6 +12,7 @@ window.onload = () => {
             if (event.target.classList.contains('placeholder')) {
                 event.target.innerHTML = '';
                 event.target.classList.remove('placeholder');
+                event.target.focus();
             }
         });
         input.addEventListener('focusout', (event) => {
