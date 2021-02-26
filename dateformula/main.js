@@ -86,7 +86,7 @@ function calculate() {
             return;
         }
 
-        if (unit === 'WD' && quantity !== 0) {
+        if (unit === 'WD' && quantity >= 1 && quantity <= 7) {
             while (true) {
                 workingDate = positive ? workingDate.plus({days: 1}) : workingDate.minus({days: 1});
                 if (workingDate.weekday === quantity) {
