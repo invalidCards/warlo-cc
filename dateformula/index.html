@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="icon" href="./favicon.ico" type="image/ico">
+    <title>DateFormula tester - warlo.cc</title>
+</head>
+<body>
+    <header>
+        <h1>Dynamics NAV / Business Central DateFormula Tester</h1>
+        <p>Sometimes it may be difficult figuring out how a DateFormula will behave, especially if working with complex formulas or using dates far into the future or the past.<br/>This tool will help you by automatically parsing DateFormulas you insert into it and giving you the result for your reference date.</p>
+    </header>
+    <section id="calculator">
+        <p>&lt;&nbsp;<span id="formula" contenteditable="true" data-placeholder="Type here..."></span>&nbsp;&gt;</p>
+        <h2>Reference date</h2>
+        <form id="refdate">
+            <input type="date">
+        </form>
+        <h2>Result</h2>
+        <p id="result">?</p>
+    </section>
+    <footer>
+        <p>Made by <a href="https://invalid.cards">Tom Kroes</a> &bull; See the code and report issues on <a href="https://github.com/invalidCards/warlo-cc/tree/master/dateformula">GitHub</a></p>
+    </footer>
+    <script src="./luxon.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>

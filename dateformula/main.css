@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+body {
+    background-color: rgb(65, 65, 65);
+    color: gainsboro;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', serif;
+}
+
+header h1 {
+    font-size: 2.2em;
+}
+
+a {
+    color: cornflowerblue;
+}
+
+#calculator p {
+    font-size: 1.8em;
+}
+
+#formula {
+    border: solid 1px black;
+    background: rgb(30, 30, 30);
+    min-width: 150px;
+    max-width: 750px;
+}
+
+#formula.placeholder {
+    color: gray;
+}
+
+#refdate input[type="date"] {
+    border: solid 1px black;
+    background-color: rgb(30, 30, 30);
+    color: gainsboro;
+    font-size: 1.3em;
+    font-family: 'Lato', sans-serif;
+}
+
+footer {
+    font-size: 0.9em;
+    padding-top: 150px;
+}
