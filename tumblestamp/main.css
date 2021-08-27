@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 body {
-    background-color: rgb(65, 65, 65);
+    background-color: rgb(0, 25, 53);
     color: gainsboro;
     font-family: 'Atkinson Hyperlegible', sans-serif;
     text-align: center;
@@ -19,26 +19,22 @@ a {
     color: cornflowerblue;
 }
 
+#calculator {
+    width: 100%;
+}
+
 #calculator p {
     font-size: 1.8em;
 }
 
-#formula {
-    border: solid 1px black;
+#snowflake {
+    border: solid 2px gainsboro;
+    border-radius: 6px;
     background: rgb(30, 30, 30);
-    min-width: 150px;
-    max-width: 750px;
-}
-
-#formula.placeholder {
-    color: gray;
-}
-
-#refdate input[type="date"] {
-    border: solid 1px black;
-    background-color: rgb(30, 30, 30);
+    width: 40%;
+    font-size: 40px;
     color: gainsboro;
-    font-size: 1.3em;
+    text-align: center;
     font-family: 'Atkinson Hyperlegible', sans-serif;
 }
 
