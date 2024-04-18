@@ -1,7 +1,6 @@
 function clickGo() {
     document.getElementById('reminder').innerText = '';
-    //fetch('https://api.scryfall.com/cards/random?q=-type%3Anonland%20game%3Apaper%20-type%3AContraption%20-type%3AAttraction').then(resp => {
-    fetch('https://api.scryfall.com/cards/c2462fdf-a594-47d0-8e10-b55901e350d9?format=json').then(resp => {
+    fetch('https://api.scryfall.com/cards/random?q=-type%3Anonland%20game%3Apaper%20-type%3AContraption%20-type%3AAttraction').then(resp => {
         resp.json().then(content => {
             console.log(content);
             if (document.getElementById('card-image-back').style.display === 'inline') {
