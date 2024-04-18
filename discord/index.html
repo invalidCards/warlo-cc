@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Discord, Lord of Disharmony" />
+    <meta property="og:description" content="Generate a random nonland Magic the Gathering card" />
+    <meta property="og:url" content="https://warlo.cc/discord" />
+    <meta property="author" content="invalidCards" />
+    <meta property="description" content="Generate a random nonland Magic the Gathering card" />
+    <link href="css/mana.min.css" rel="stylesheet" type="text/css" /> 
+    <link rel="stylesheet" href="./main.css">
+    <link rel="icon" href="../favicon.ico" type="image/ico">
+    <title>Discord, Lord of Disharmony - warlo.cc</title>
+</head>
+<body>
+    <header>
+        <button id="go" onclick="clickGo()"><h1>Discord Does the Thing</h1></button>
+        <p id="reminder">Click the button above to generate a card!</p>
+    </header>
+    <section id="output">
+        <img id="card-image" src="https://cards.scryfall.io/png/front/c/4/c474c0f1-08c7-4183-b024-297a11594a96.png?1711471586" style="display:inline;">
+        <img id="card-image-back" src="" style="display: none;">
+        <div id="card-data">
+            <h2 id="flip-icon" style="display:none" onclick="switchFace()"><i class="ms ms-dfc-back"></i> </h2><h2 style="display:inline" id="card-name">Discord, Lord of Disharmony</h2>
+            <h3 id="mana-cost"><i class="ms ms-2 ms-cost ms-shadow"></i><i class="ms ms-b ms-cost ms-shadow"></i><i class="ms ms-r ms-cost ms-shadow"></i></h3>
+            <h4 id="typeline">Legendary Creature - Chimera</h4>
+            <p id="rules-text">Flying<br/><br/>At the beginning of your end step, choose a random nonland <i>Magic</i> card name. Until your next end step, you may cast a copy of a spell with that name, and mana of any type can be spent to cast it. If you cast a spell this way, copy this ability if Discord is on the battlefield.</p>
+            <h4 id="pt">3/5</h4>
+        </div>
+    </section>
+    <footer>
+        <p>Made by <a href="https://invalid.cards">invalidCards</a> &bull; See the code and report issues on <a href="https://github.com/invalidCards/warlo-cc/tree/master/tumblestamp">GitHub</a></p>
+        <p><i>(Tip: Click on the DFC icon for double-faced cards to view the back!)</i></p>
+    </footer>
+    <script src="./main.js"></script>
+</body>
+</html>
