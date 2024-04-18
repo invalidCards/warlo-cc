@@ -53,18 +53,18 @@ function switchFace() {
 
 function replaceMana(input) {
     var output = input;
-    output = output.replaceAll('{T}', '<i class="ms ms-tap ms-cost ms-shadow"></i>'); //tap
-    output = output.replaceAll('{Q}', '<i class="ms ms-untap ms-cost ms-shadow"></i>'); //untap
-    output = output.replaceAll('{E}', '<i class="ms ms-energy"></i>'); //energy needs no background
-    output = output.replace(/\{(\d+|W|U|B|R|G|C|P|S|X)\}/g, (match, p1) => { //numerical + colors + X + snow
+    output = output.replaceAll('{T}', '<i class="ms ms-tap ms-cost ms-shadow"></i>');               //tap
+    output = output.replaceAll('{Q}', '<i class="ms ms-untap ms-cost ms-shadow"></i>');             //untap
+    output = output.replaceAll('{E}', '<i class="ms ms-energy"></i>');                              //energy needs no background
+    output = output.replace(/\{(\d+|W|U|B|R|G|C|P|S|X)\}/g, (match, p1) => {                        //numerical + colors + X + snow
         return `<i class="ms ms-${p1.toLowerCase()} ms-cost ms-shadow"></i>`
     });
-    output = output.replace(/\{(.*?)\/(.*?)\}/g, (match, p1, p2) => { //dual pips + phyrexian
+    output = output.replace(/\{(.*?)\/(.*?)\}/g, (match, p1, p2) => {                               //dual pips + phyrexian
         return `<i class="ms ms-${p1.toLowerCase()}${p2.toLowerCase()} ms-cost ms-shadow"></i>`;
     });
-    output = output.replace(/\[[−-](\d+)\]/g, '<i class="ms ms-loyalty-down ms-loyalty-$1"></i>'); //negative loyalty
-    output = output.replace(/\[0\]/g, '<i class="ms ms-loyalty-zero ms-loyalty-0"></i>'); //zero loyalty
-    output = output.replace(/\[-(\d+)\]/g, '<i class="ms ms-loyalty-up ms-loyalty-$1"></i>'); //positive loyalty
+    output = output.replace(/\[[−-](\d+)\]/g, '<i class="ms ms-loyalty-down ms-loyalty-$1"></i>');  //negative loyalty
+    output = output.replace(/\[0\]/g, '<i class="ms ms-loyalty-zero ms-loyalty-0"></i>');           //zero loyalty
+    output = output.replace(/\[-(\d+)\]/g, '<i class="ms ms-loyalty-up ms-loyalty-$1"></i>');       //positive loyalty
     return output;
 }
 

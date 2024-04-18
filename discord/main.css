@@ -30,6 +30,7 @@ button#go {
 button#go h1 {
     font-family: 'Atkinson Hyperlegible', sans-serif;
     margin: 0;
+    padding: 1% 0;
 }
 
 p#reminder {
@@ -38,7 +39,8 @@ p#reminder {
 
 section#output {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    justify-content: center;
     column-gap: 5%;
     width: 65%;
 }
@@ -46,10 +48,14 @@ section#output {
 img#card-image, img#card-image-back {
     width: 100%;
     max-width: 20em;
+    height: auto;
+    margin-bottom: 3%;
 }
 
 div#card-data {
     text-align: left;
+    width: 100%;
+    max-width: 60%;
 }
 
 i.ms {
