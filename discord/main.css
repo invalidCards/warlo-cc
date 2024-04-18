@@ -8,7 +8,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 1.2em;
+    font-size: 1.85em;
 }
 
 header {
@@ -16,7 +16,7 @@ header {
 }
 
 header h1 {
-    font-size: 2.2em;
+    font-size: 3.3em;
 }
 
 a {
@@ -42,12 +42,12 @@ section#output {
     flex-wrap: wrap;
     justify-content: center;
     column-gap: 5%;
-    width: 65%;
+    width: 100%;
 }
 
 img#card-image, img#card-image-back {
     width: 100%;
-    max-width: 20em;
+    max-width: 25em;
     height: auto;
     margin-bottom: 3%;
 }
@@ -55,7 +55,7 @@ img#card-image, img#card-image-back {
 div#card-data {
     text-align: left;
     width: 100%;
-    max-width: 60%;
+    max-width: 90%;
 }
 
 i.ms {
@@ -73,4 +73,26 @@ i.ms.ms-loyalty-down, i.ms.ms-loyalty-up, i.ms.ms-loyalty-zero {
 footer {
     font-size: 0.9em;
     padding-top: 30px;
+}
+
+@media only screen and (min-width: 992px) {
+    body {
+        font-size: 1.2em;
+    }
+
+    header h1 {
+        font-size: 2.2em;
+    }
+
+    section#output {
+        width: 65%;
+    }
+
+    div#card-data {
+        max-width: 60%;
+    }
+
+    img#card-image, img#card-image-back {
+        max-width: 20em;
+    }
 }
