@@ -15,6 +15,7 @@ const scryfallUrl = `https://api.scryfall.com/cards/random?q=${searchParams.map(
 
 function clickGo() {
     document.getElementById('reminder').innerText = '';
+    document.getElementById('go').setAttribute('disabled', 'disabled');
     document.getElementById('btnTitle').innerText = "⏳ He's doing it..."
     console.log(scryfallUrl);
     fetch(scryfallUrl).then(resp => {
@@ -47,8 +48,12 @@ function clickGo() {
                 document.getElementById('pt').innerText = renderPT(content.power, content.toughness);
                 document.getElementById('flip-icon').style.display = 'none';
             }
-            document.getElementById('btnTitle').innerText = 'Discord Does the Thing';
+            resetButtonState();
+        }).finally(() => {
+            resetButtonState();
         });
+    }).finally(() => {
+        resetButtonState();
     });
 }
 
@@ -67,6 +72,11 @@ function switchFace() {
         icon.firstChild.classList.remove('ms-dfc-front');
         icon.firstChild.classList.add('ms-dfc-back');
     }
+}
+
+function resetButtonState() {
+    document.getElementById('btnTitle').innerText = 'Discord Does the Thing';
+    document.getElementById('go').removeAttribute('disabled');
 }
 
 function replaceMana(input) {
