@@ -1,6 +1,22 @@
+const searchParams = [
+    '-type:land',
+    'game:paper',
+    '-type:Contraption',    //not maindeckable or ever castable, shouldn't count IMO
+    '-type:Attraction',     //not maindeckable or ever castable, shouldn't count IMO
+    'include:extras',       //we want stuff like playtest cards to be rollable
+    '-layout:token',        //removes tokens, memorabilia cards, etc.
+    '-type=Card',           //seems to get most of the random art cards and Jumpstart fronts
+    '-layout:planar',       //Planechase cards
+    '-layout:scheme',       //Archenemy cards
+    '-type:conspiracy',     //Conspiracies can only exist in the command zone
+]
+
+const scryfallUrl = `https://api.scryfall.com/cards/random?q=${searchParams.map(v => v.replace(':', '%3A')).join('%20')}`;
+
 function clickGo() {
     document.getElementById('reminder').innerText = '';
-    fetch('https://api.scryfall.com/cards/random?q=-type%3Aland%20game%3Apaper%20-type%3AContraption%20-type%3AAttraction').then(resp => {
+    console.log(scryfallUrl);
+    fetch(scryfallUrl).then(resp => {
         resp.json().then(content => {
             console.log(content);
             if (document.getElementById('card-image-back').style.display === 'inline') {
@@ -55,6 +71,7 @@ function replaceMana(input) {
     var output = input;
     output = output.replaceAll('{T}', '<i class="ms ms-tap ms-cost ms-shadow"></i>');               //tap
     output = output.replaceAll('{Q}', '<i class="ms ms-untap ms-cost ms-shadow"></i>');             //untap
+    output = output.replaceAll('{A}', '<i class="ms ms-acorn ms-cost ms-shadow"></i>');             //the one card with acorn counters
     output = output.replaceAll('{E}', '<i class="ms ms-energy"></i>');                              //energy needs no background
     output = output.replace(/\{(\d+|W|U|B|R|G|C|P|S|X)\}/g, (match, p1) => {                        //numerical + colors + X + snow
         return `<i class="ms ms-${p1.toLowerCase()} ms-cost ms-shadow"></i>`
