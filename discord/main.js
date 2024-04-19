@@ -15,6 +15,7 @@ const scryfallUrl = `https://api.scryfall.com/cards/random?q=${searchParams.map(
 
 function clickGo() {
     document.getElementById('reminder').innerText = '';
+    document.getElementById('btnTitle').innerText = "⏳ He's doing it..."
     console.log(scryfallUrl);
     fetch(scryfallUrl).then(resp => {
         resp.json().then(content => {
@@ -46,6 +47,7 @@ function clickGo() {
                 document.getElementById('pt').innerText = renderPT(content.power, content.toughness);
                 document.getElementById('flip-icon').style.display = 'none';
             }
+            document.getElementById('btnTitle').innerText = 'Discord Does the Thing';
         });
     });
 }
