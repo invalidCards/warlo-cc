@@ -9,6 +9,8 @@ const searchParams = [
     '-layout:planar',       //Planechase cards
     '-layout:scheme',       //Archenemy cards
     '-type:conspiracy',     //Conspiracies can only exist in the command zone
+    '-type:hero',           //Functionally uncastable
+    '-type:emblem',         //non-card gamepiece
 ]
 
 const scryfallUrl = `https://api.scryfall.com/cards/random?q=${searchParams.map(v => v.replace(':', '%3A')).join('%20')}`;
@@ -17,36 +19,27 @@ function clickGo() {
     document.getElementById('reminder').innerText = '';
     document.getElementById('go').setAttribute('disabled', 'disabled');
     document.getElementById('btnTitle').innerText = "⏳ He's doing it..."
-    console.log(scryfallUrl);
     fetch(scryfallUrl).then(resp => {
         resp.json().then(content => {
-            console.log(content);
-            if (document.getElementById('card-image-back').style.display === 'inline') {
-                switchFace();
-            }
-            document.getElementById('card-name').innerText = content.name;
-            document.getElementById('typeline').innerText = content.type_line;
             if (content.card_faces) {
-                document.getElementById('card-image').src = content.card_faces[0].image_uris?.png || content.image_uris.png;
-                document.getElementById('card-image-back').src = content.card_faces[1].image_uris?.png || '';
-                document.getElementById('mana-cost').innerHTML = replaceMana(`${content.card_faces[0].mana_cost} // ${content.card_faces[1].mana_cost}`);
-                document.getElementById('rules-text').innerHTML = replaceMana(`${fixOracleText(content.card_faces[0].oracle_text)}<br/><hr/>${fixOracleText(content.card_faces[1].oracle_text)}`);
-                let ptFront = renderPT(content.card_faces[0].power, content.card_faces[0].toughness, true);
-                let ptBack = renderPT(content.card_faces[1].power, content.card_faces[1].toughness, true);
-                if (!(ptFront === 'N/A' && ptBack === 'N/A')) {
-                    document.getElementById('pt').innerText = `${renderPT(content.card_faces[0].power, content.card_faces[0].toughness, true)} // ${renderPT(content.card_faces[1].power, content.card_faces[1].toughness, true)}`;
-                } else {
-                    document.getElementById('pt').innerText = '';
-                }
-                if (content.card_faces[1].image_uris) {
-                    document.getElementById('flip-icon').style.display = 'inline';
-                }
+                let face = randomInt(content.card_faces.length);
+                document.getElementById('card-name').innerText = content.card_faces[face].name;
+                document.getElementById('typeline').innerText = content.card_faces[face].type_line;
+                document.getElementById('card-image').src = content.card_faces[face].image_uris?.png || content.image_uris.png;
+                document.getElementById('mana-cost-raw').innerText = content.card_faces[face].mana_cost;
+                document.getElementById('mana-cost').innerHTML = replaceMana(content.card_faces[face].mana_cost);
+                document.getElementById('rules-text-raw').innerText = fixOracleTextCanvas(content.card_faces[face].oracle_text);
+                document.getElementById('rules-text').innerHTML = replaceMana(fixOracleText(content.card_faces[face].oracle_text));
+                document.getElementById('pt').innerText = renderPT(content.card_faces[0].power, content.card_faces[face].toughness, true);
             } else {
+                document.getElementById('card-name').innerText = content.name;
+                document.getElementById('typeline').innerText = content.type_line;
                 document.getElementById('card-image').src = content.image_uris.png;
+                document.getElementById('mana-cost-raw').innerText = content.mana_cost;
                 document.getElementById('mana-cost').innerHTML = replaceMana(content.mana_cost);
+                document.getElementById('rules-text-raw').innerText = fixOracleTextCanvas(content.oracle_text);
                 document.getElementById('rules-text').innerHTML = replaceMana(fixOracleText(content.oracle_text));
                 document.getElementById('pt').innerText = renderPT(content.power, content.toughness);
-                document.getElementById('flip-icon').style.display = 'none';
             }
             resetButtonState();
         }).finally(() => {
@@ -57,21 +50,8 @@ function clickGo() {
     });
 }
 
-function switchFace() {
-    var front = document.getElementById('card-image');
-    var back = document.getElementById('card-image-back');
-    var icon = document.getElementById('flip-icon');
-    if (front.style.display === 'inline') {
-        front.style.display = 'none';
-        back.style.display = 'inline';
-        icon.firstChild.classList.remove('ms-dfc-back');
-        icon.firstChild.classList.add('ms-dfc-front');
-    } else {
-        back.style.display = 'none';
-        front.style.display = 'inline';
-        icon.firstChild.classList.remove('ms-dfc-front');
-        icon.firstChild.classList.add('ms-dfc-back');
-    }
+function randomInt(max) {
+    return Math.floor(Math.random() * max);
 }
 
 function resetButtonState() {
@@ -100,6 +80,9 @@ function replaceMana(input) {
 function fixOracleText(input) {
     return input.replaceAll('\n', '<br/><br/>').replaceAll('(', '<i>(').replaceAll(')', ')</i>');
 }
+function fixOracleTextCanvas(input) {
+    return input.replace(/\(.*?\)/gi, '');
+}
 
 function renderPT(p, t, renderNA) {
     if (!p || !t) {
@@ -108,4 +91,66 @@ function renderPT(p, t, renderNA) {
     }
 
     return `${p}/${t}`;
+}
+
+function paintAndPrint() {
+    var canvas = document.createElement('canvas');
+    canvas.width = 220;
+    canvas.height = 400;
+    var context = canvas.getContext('2d');
+    let textToWrite =
+        `${document.getElementById('card-name').innerText}\n`+
+        `${document.getElementById('mana-cost-raw').innerText}\n`+
+        `${document.getElementById('typeline').innerText}\n`+
+        `${document.getElementById('rules-text-raw').innerHTML.replaceAll('<br>', '\n')}`;
+    if (document.getElementById('pt').innerText !== '') {
+        textToWrite += `\n${document.getElementById('pt').innerText}`;
+    }
+    context.wrapText(textToWrite, 10, 20, 200, context.measureText('M').width * 1.2);
+    printCanvas(canvas.toDataURL('image/png'));
+};
+
+function printCanvas(dataUrl)  
+{  
+    let windowContent = '<!DOCTYPE html>';
+    windowContent += '<html>';
+    windowContent += '<head><title>Print canvas</title></head>';
+    windowContent += '<body>';
+    windowContent += '<img src="' + dataUrl + '">';
+    windowContent += '</body>';
+    windowContent += '</html>';
+    
+    const printWin = window.open('', '', 'width=' + screen.availWidth + ',height=' + screen.availHeight);
+    printWin.document.open();
+    printWin.document.write(windowContent); 
+    
+    printWin.document.addEventListener('load', function() {
+        printWin.focus();
+        printWin.print();
+        printWin.document.close();
+        printWin.close();            
+    }, true);
+}
+  
+CanvasRenderingContext2D.prototype.wrapText = function (text, x, y, maxWidth, lineHeight) {
+    var lines = text.split("\n");
+    for (var i = 0; i < lines.length; i++) {
+        var words = lines[i].split(' ');
+        var line = '';
+        for (var n = 0; n < words.length; n++) {
+            var testLine = line + words[n] + ' ';
+            var metrics = this.measureText(testLine);
+            var testWidth = metrics.width;
+            if (testWidth > maxWidth && n > 0) {
+                this.fillText(line, x, y);
+                line = words[n] + ' ';
+                y += lineHeight;
+            }
+            else {
+                line = testLine;
+            }
+        }
+        this.fillText(line, x, y);
+        y += lineHeight;
+    }
 }
