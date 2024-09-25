@@ -11,6 +11,7 @@ const searchParams = [
     '-type:conspiracy',     //Conspiracies can only exist in the command zone
     '-type:hero',           //Functionally uncastable
     '-type:emblem',         //non-card gamepiece
+    '-type:vanguard'        //out-of-deck playpiece
 ]
 
 const scryfallUrl = `https://api.scryfall.com/cards/random?q=${searchParams.map(v => v.replace(':', '%3A')).join('%20')}`;
