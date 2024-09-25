@@ -1,5 +1,5 @@
 const searchParams = [
-    '-type:land',
+    '(-t:land or ((is:mdfc or is:transform or is:flip) and t:land and (t:instant or t:sorcery or t:creature or t:enchantment or t:artifact)))', //we must be able to find the front cards of MDFCs et al. as well
     'game:paper',
     '-type:Contraption',    //not maindeckable or ever castable, shouldn't count IMO
     '-type:Attraction',     //not maindeckable or ever castable, shouldn't count IMO
@@ -23,6 +23,9 @@ function clickGo() {
         resp.json().then(content => {
             if (content.card_faces) {
                 let face = randomInt(content.card_faces.length);
+                if (content.card_faces[face].type_line.includes("Land")) {
+                    face === 1 ? face = 0 : face = 1; //Swap faces if we hit the land side of an MDFC/transform/flip/etc.
+                }
                 document.getElementById('card-name').innerText = content.card_faces[face].name;
                 document.getElementById('typeline').innerText = content.card_faces[face].type_line;
                 document.getElementById('card-image').src = content.card_faces[face].image_uris?.png || content.image_uris.png;
