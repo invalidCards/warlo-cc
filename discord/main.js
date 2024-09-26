@@ -97,64 +97,25 @@ function renderPT(p, t, renderNA) {
     return `${p}/${t}`;
 }
 
-function paintAndPrint() {
-    var canvas = document.createElement('canvas');
-    canvas.width = 220;
-    canvas.height = 400;
-    var context = canvas.getContext('2d');
-    let textToWrite =
-        `${document.getElementById('card-name').innerText}\n`+
-        `${document.getElementById('mana-cost-raw').innerText}\n`+
-        `${document.getElementById('typeline').innerText}\n`+
-        `${document.getElementById('rules-text-raw').innerHTML.replaceAll('<br>', '\n')}`;
-    if (document.getElementById('pt').innerText !== '') {
-        textToWrite += `\n${document.getElementById('pt').innerText}`;
-    }
-    context.wrapText(textToWrite, 10, 20, 200, context.measureText('M').width * 1.2);
-    printCanvas(canvas.toDataURL('image/png'));
-};
-
-function printCanvas(dataUrl)  
+function printCard()  
 {  
+    let css = "@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap'); body { font-family: 'Atkinson Hyperlegible', sans-serif; } h2, h3, h4, p { margin: 0; }";
+
     let windowContent = '<!DOCTYPE html>';
     windowContent += '<html>';
-    windowContent += '<head><title>Print canvas</title></head>';
+    windowContent += `<head><title>Print card</title><style>${css}</style></head>`;
     windowContent += '<body>';
-    windowContent += '<img src="' + dataUrl + '">';
+    windowContent += `<h2>${document.getElementById('card-name').innerText}</h2>`;
+    windowContent += `<h3>${document.getElementById('mana-cost-raw').innerText}</h3>`;
+    windowContent += `<h3>${document.getElementById('typeline').innerText}</h3>`;
+    windowContent += `<p>${document.getElementById('rules-text-raw').innerHTML}</p>`;
+    if (document.getElementById('pt').innerText !== '') {
+        windowContent += `<h3>${document.getElementById('pt').innerText}</h3>`
+    }
     windowContent += '</body>';
     windowContent += '</html>';
     
     const printWin = window.open('', '', 'width=' + screen.availWidth + ',height=' + screen.availHeight);
     printWin.document.open();
-    printWin.document.write(windowContent); 
-    
-    printWin.document.addEventListener('load', function() {
-        printWin.focus();
-        printWin.print();
-        printWin.document.close();
-        printWin.close();            
-    }, true);
-}
-  
-CanvasRenderingContext2D.prototype.wrapText = function (text, x, y, maxWidth, lineHeight) {
-    var lines = text.split("\n");
-    for (var i = 0; i < lines.length; i++) {
-        var words = lines[i].split(' ');
-        var line = '';
-        for (var n = 0; n < words.length; n++) {
-            var testLine = line + words[n] + ' ';
-            var metrics = this.measureText(testLine);
-            var testWidth = metrics.width;
-            if (testWidth > maxWidth && n > 0) {
-                this.fillText(line, x, y);
-                line = words[n] + ' ';
-                y += lineHeight;
-            }
-            else {
-                line = testLine;
-            }
-        }
-        this.fillText(line, x, y);
-        y += lineHeight;
-    }
+    printWin.document.write(windowContent);
 }
