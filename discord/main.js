@@ -99,7 +99,7 @@ function renderPT(p, t, renderNA) {
 
 function printCard()  
 {  
-    let css = "@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap'); body { font-family: 'Atkinson Hyperlegible', sans-serif; } h2, h3, h4, p { margin: 0; }";
+    let css = "@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap'); body { font-family: 'Atkinson Hyperlegible', sans-serif; font-size: 3em; } h2, h3, h4, p { margin: 0; }";
 
     let windowContent = '<!DOCTYPE html>';
     windowContent += '<html>';
