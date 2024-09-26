@@ -30,18 +30,14 @@ function clickGo() {
                 document.getElementById('card-name').innerText = content.card_faces[face].name;
                 document.getElementById('typeline').innerText = content.card_faces[face].type_line;
                 document.getElementById('card-image').src = content.card_faces[face].image_uris?.png || content.image_uris.png;
-                document.getElementById('mana-cost-raw').innerText = content.card_faces[face].mana_cost;
                 document.getElementById('mana-cost').innerHTML = replaceMana(content.card_faces[face].mana_cost);
-                document.getElementById('rules-text-raw').innerText = fixOracleTextCanvas(content.card_faces[face].oracle_text);
                 document.getElementById('rules-text').innerHTML = replaceMana(fixOracleText(content.card_faces[face].oracle_text));
                 document.getElementById('pt').innerText = renderPT(content.card_faces[0].power, content.card_faces[face].toughness, true);
             } else {
                 document.getElementById('card-name').innerText = content.name;
                 document.getElementById('typeline').innerText = content.type_line;
                 document.getElementById('card-image').src = content.image_uris.png;
-                document.getElementById('mana-cost-raw').innerText = content.mana_cost;
                 document.getElementById('mana-cost').innerHTML = replaceMana(content.mana_cost);
-                document.getElementById('rules-text-raw').innerText = fixOracleTextCanvas(content.oracle_text);
                 document.getElementById('rules-text').innerHTML = replaceMana(fixOracleText(content.oracle_text));
                 document.getElementById('pt').innerText = renderPT(content.power, content.toughness);
             }
@@ -95,27 +91,4 @@ function renderPT(p, t, renderNA) {
     }
 
     return `${p}/${t}`;
-}
-
-function printCard()  
-{  
-    let css = "@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap'); body { font-family: 'Atkinson Hyperlegible', sans-serif; font-size: 3em; } h2, h3, h4, p { margin: 0; }";
-
-    let windowContent = '<!DOCTYPE html>';
-    windowContent += '<html>';
-    windowContent += `<head><title>Print card</title><style>${css}</style></head>`;
-    windowContent += '<body>';
-    windowContent += `<h2>${document.getElementById('card-name').innerText}</h2>`;
-    windowContent += `<h3>${document.getElementById('mana-cost-raw').innerText}</h3>`;
-    windowContent += `<h3>${document.getElementById('typeline').innerText}</h3>`;
-    windowContent += `<p>${document.getElementById('rules-text-raw').innerHTML}</p>`;
-    if (document.getElementById('pt').innerText !== '') {
-        windowContent += `<h3>${document.getElementById('pt').innerText}</h3>`
-    }
-    windowContent += '</body>';
-    windowContent += '</html>';
-    
-    const printWin = window.open('', '', 'width=' + screen.availWidth + ',height=' + screen.availHeight);
-    printWin.document.open();
-    printWin.document.write(windowContent);
 }
