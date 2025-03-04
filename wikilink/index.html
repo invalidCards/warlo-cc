@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="RuneScape Wiki Link Game" />
+    <meta property="og:description" content="Create a wiki link game for any of the RuneScape wikis." />
+    <meta property="og:url" content="https://warlo.cc/wikilink" />
+    <meta property="author" content="invalidCards" />
+    <meta property="description" content="Create a wiki link game for any of the RuneScape wikis." />
+    <link rel="stylesheet" href="./main.css">
+    <link rel="icon" href="../favicon.ico" type="image/ico">
+    <title>RuneScape Wiki Link Game - warlo.cc</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Game setup</legend>
+        <div>
+            <input type="radio" id="wiki-rs3" name="wiki_pick" value="RS3">
+            <label for="wiki-rs3">RS3</label>
+            <input type="radio" id="wiki-osrs" name="wiki_pick" value="OSRS">
+            <label for="wiki-osrs">OSRS</label>
+            <input type="radio" id="wiki-classic" name="wiki_pick" value="Classic">
+            <label for="wiki-classic">Classic</label>
+        </div>
+        <div>
+            <label for="steps">Steps:</label> <input type="number" name="steps">
+            <label for="time_sec">Time (sec):</label> <input type="number" name="time_sec">
+        </div>
+        <div>
+            <input type="checkbox" name="hide_path"><label for="hide_path">Hide path</label><br/>
+        </div>
+    </fieldset>
+    <button id="generate">Generate game</button>
+
+    <p>From <b id="from">N/A</b> to <b id="to">N/A</b> in <b id="steps_out">N/A</b> steps</p>
+    <p id="steplist">(No steps calculated - generate a game above!)</p>
+
+    <button id="timer_control">Start timer</button> - <b id="time_left">N/A</b> seconds left
+
+    <script src="./main.js"></script>
+</body>
