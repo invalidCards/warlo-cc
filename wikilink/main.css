@@ -1,7 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 3.5em;
+}
+
+input[type=radio],
+input[type=checkbox] {
+    border: 0px;
+    width: 5%;
+    height: 2em;
+}
+
+input[type=number] {
+    font-size: 1em;
+    max-width: 60%;
+}
+
+button {
+    font-size: 1em;
+}
+
+#setup {
+    max-width: 92%;
+}
+
 #time_left.timerLow {
     color: red;
 }
 
 .elemHidden {
     display: none !important;
+}
+
+@media only screen and (min-width: 992px) {
+    body {
+        font-size: 1.2em;
+    }
+
+    input[type=radio],
+    input[type=checkbox] {
+        height: auto;
+    }
 }

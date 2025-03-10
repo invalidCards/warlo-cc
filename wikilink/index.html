@@ -14,9 +14,9 @@
     <title>RuneScape Wiki Link Game - warlo.cc</title>
 </head>
 <body>
-    <fieldset>
+    <fieldset id="setup">
         <legend>Game setup</legend>
-        <div>
+        <div class="setup_sub setup_radio">
             <input type="radio" id="wiki-rs3" name="wiki_pick" value="RS3">
             <label for="wiki-rs3">RS3</label>
             <input type="radio" id="wiki-osrs" name="wiki_pick" value="OSRS">
@@ -24,8 +24,8 @@
             <input type="radio" id="wiki-classic" name="wiki_pick" value="Classic">
             <label for="wiki-classic">Classic</label>
         </div>
-        <div>
-            <label for="steps">Steps:</label> <input type="number" name="steps">
+        <div class="setup_sub setup_number">
+            <label for="steps">Steps:</label> <input type="number" name="steps"><br/>
             <label for="time_sec">Time (sec):</label> <input type="number" name="time_sec">
         </div>
         <div>
