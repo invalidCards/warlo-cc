@@ -3,41 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:type" content="website">
     <meta property="og:title" content="RuneScape Wiki Link Game" />
     <meta property="og:description" content="Create a wiki link game for any of the RuneScape wikis." />
     <meta property="og:url" content="https://warlo.cc/wikilink" />
     <meta property="author" content="invalidCards" />
-    <meta property="description" content="Create a wiki link game for any of the RuneScape wikis." />
+    <meta name="description" content="Create a wiki link game for any of the RuneScape wikis." />
     <link rel="stylesheet" href="./main.css">
     <link rel="icon" href="../favicon.ico" type="image/ico">
     <title>RuneScape Wiki Link Game - warlo.cc</title>
 </head>
 <body>
-    <fieldset id="setup">
-        <legend>Game setup</legend>
-        <div class="setup_sub setup_radio">
-            <input type="radio" id="wiki-rs3" name="wiki_pick" value="RS3">
-            <label for="wiki-rs3">RS3</label>
-            <input type="radio" id="wiki-osrs" name="wiki_pick" value="OSRS">
-            <label for="wiki-osrs">OSRS</label>
-            <input type="radio" id="wiki-classic" name="wiki_pick" value="Classic">
-            <label for="wiki-classic">Classic</label>
-        </div>
-        <div class="setup_sub setup_number">
-            <label for="steps">Steps:</label> <input type="number" name="steps"><br/>
-            <label for="time_sec">Time (sec):</label> <input type="number" name="time_sec">
-        </div>
-        <div>
-            <input type="checkbox" name="hide_path"><label for="hide_path">Hide path</label><br/>
-        </div>
-    </fieldset>
-    <button id="generate">Generate game</button>
+    <main>
+        <h1>Wiki Link Game</h1>
+        
+        <fieldset id="setup">
+            <legend>Setup</legend>
+            <div class="setup_sub setup_radio">
+                <label style="font-weight: 600; display: block; font-size: 13px; margin-bottom: 3px;">Wiki:</label>
+                <label for="wiki-rs3"><input type="radio" id="wiki-rs3" name="wiki_pick" value="RS3"> RS3</label>
+                <label for="wiki-osrs"><input type="radio" id="wiki-osrs" name="wiki_pick" value="OSRS"> OSRS</label>
+                <label for="wiki-classic"><input type="radio" id="wiki-classic" name="wiki_pick" value="Classic"> Classic</label>
+            </div>
+            <div class="setup_sub setup_number">
+                <div>
+                    <label for="steps">Steps:</label>
+                    <input type="number" id="steps" name="steps" min="1" max="50" value="5">
+                </div>
+                <div>
+                    <label for="time_sec">Time (sec):</label>
+                    <input type="number" id="time_sec" name="time_sec" min="1" max="3600" value="60">
+                </div>
+            </div>
+            <div class="setup_sub">
+                <label for="hide_path"><input type="checkbox" id="hide_path" name="hide_path"> Hide path</label>
+            </div>
+        </fieldset>
 
-    <p>From <b id="from">N/A</b> to <b id="to">N/A</b> in <b id="steps_out">N/A</b> steps</p>
-    <p id="steplist">(No steps calculated - generate a game above!)</p>
+        <button id="generate">Generate Game</button>
+        <div id="error-message" class="error-message elemHidden" role="alert"></div>
+        <div id="loading-indicator" class="loading-indicator elemHidden">
+            <span class="spinner"></span> Generating path...
+        </div>
 
-    <button id="timer_control">Start timer</button> - <b id="time_left">N/A</b> seconds left
+        <p style="margin: 4px 0;">From <strong id="from">N/A</strong> → <strong id="to">N/A</strong> (<strong id="steps_out">N/A</strong> steps)</p>
+        <p id="steplist" role="region" aria-label="Game path">(No steps calculated)</p>
+
+        <div style="display: flex; gap: 8px; align-items: center; margin-top: 4px;">
+            <button id="timer_control" style="margin: 0;">Start</button>
+            <span><strong id="time_left" aria-live="polite">N/A</strong>s</span>
+        </div>
+    </main>
 
     <script src="./main.js"></script>
 </body>

@@ -1,45 +1,310 @@
-@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --primary: #64b5f6;
+    --primary-dark: #42a5f5;
+    --primary-light: #90caf9;
+    --danger: #ef5350;
+    --text: #e0e0e0;
+    --text-secondary: #b0bec5;
+    --bg: #121212;
+    --bg-surface: #1e1e1e;
+    --bg-surface-light: #2c2c2c;
+    --border: #404040;
+    --radius: 8px;
+    --spacing: 12px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
 
 body {
     font-family: 'Atkinson Hyperlegible', sans-serif;
-    font-size: 3.5em;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text);
+    background: var(--bg);
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: column;
 }
 
-input[type=radio],
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    min-height: 0;
+}
+
+/* Headings & Text */
+h1, h2, h3 {
+    font-family: 'PT Serif', serif;
+    margin: 0 0 4px 0;
+    font-size: 18px;
+    color: var(--primary-light);
+}
+
+p {
+    margin: 4px 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+}
+
+/* Forms */
+fieldset {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 8px 10px;
+    margin: 0;
+    background: var(--bg-surface);
+}
+
+legend {
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 0 4px;
+    margin-left: -4px;
+    color: var(--primary-light);
+}
+
+.setup_sub {
+    margin: 6px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.setup_radio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.setup_radio label,
+.setup_number label {
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    font-size: 13px;
+    color: var(--text);
+}
+
+.setup_radio input[type=radio],
 input[type=checkbox] {
-    border: 0px;
-    width: 5%;
-    height: 2em;
+    margin-right: 6px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: var(--primary-light);
+    flex-shrink: 0;
+}
+
+.setup_number {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.setup_number > div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
 }
 
 input[type=number] {
-    font-size: 1em;
-    max-width: 60%;
+    font-size: 13px;
+    padding: 6px 8px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-family: inherit;
+    width: 100%;
+    background: var(--bg-surface-light);
+    color: var(--text);
 }
 
+input[type=number]:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(100, 181, 246, 0.2);
+}
+
+/* Buttons */
 button {
-    font-size: 1em;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-family: inherit;
+    background: var(--primary);
+    color: #000;
+    transition: all 0.2s ease;
+    display: inline-block;
+    margin: 0;
 }
 
-#setup {
-    max-width: 92%;
+button:hover {
+    background: var(--primary-light);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(100, 181, 246, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(100, 181, 246, 0.2);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Timer & Game Display */
+#time_left {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--primary-light);
+    transition: color 0.2s ease;
 }
 
 #time_left.timerLow {
-    color: red;
+    color: var(--danger);
+    animation: pulse 1s infinite;
 }
 
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+#steplist {
+    background: var(--bg-surface);
+    padding: 8px 10px;
+    border-radius: var(--radius);
+    border-left: 3px solid var(--primary);
+    word-break: break-word;
+    overflow-wrap: break-word;
+    font-size: 13px;
+    margin: 0;
+    line-height: 1.4;
+    max-height: 80px;
+    overflow-y: auto;
+    color: var(--text);
+}
+
+#steplist a {
+    color: var(--primary-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+#steplist a:hover {
+    color: var(--primary-light);
+    text-decoration: underline;
+}
+
+#from a, #to a, #from a:visited, #to a:visited {
+    color: var(--primary-light);
+    text-decoration: underline;
+}
+
+/* Utilities */
 .elemHidden {
     display: none !important;
 }
 
-@media only screen and (min-width: 992px) {
+/* Error & Loading */
+.error-message {
+    background: rgba(239, 83, 80, 0.15);
+    border: 1px solid var(--danger);
+    border-radius: var(--radius);
+    padding: 8px 10px;
+    color: #ff7f7f;
+    font-size: 13px;
+    font-weight: 500;
+    margin: 6px 0;
+}
+
+.loading-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--primary-light);
+    font-weight: 500;
+    margin: 6px 0;
+}
+
+.spinner {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(100, 181, 246, 0.2);
+    border-top-color: var(--primary-light);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Tablet & Desktop */
+@media (min-width: 640px) {
     body {
-        font-size: 1.2em;
+        font-size: 15px;
+        padding: 12px 16px;
     }
 
-    input[type=radio],
-    input[type=checkbox] {
-        height: auto;
+    .setup_radio {
+        flex-direction: row;
+        gap: 16px;
+    }
+
+    .setup_number {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    .setup_number > div {
+        flex: 0 1 calc(50% - 8px);
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    fieldset {
+        padding: 12px 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 18px;
+    }
+
+    h1 {
+        font-size: 20px;
     }
 }
